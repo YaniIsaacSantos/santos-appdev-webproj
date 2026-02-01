@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Home() {
   return (
      <div>
-      <h1>My First Next.js Website!</h1>
+      <h1>My Yani Niggas Next.js Website!</h1>
       <p>Welcome to my site deployed on Vercel</p>
       <style jsx>{`
         div {
