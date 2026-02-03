@@ -14,39 +14,76 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const colorPalette = {
+    primary: "#0A192F",
+    secondary: "#112240",
+    accent: "#64FFDA",
+    textPrimary: "#CCD6F6",
+    textSecondary: "#8892B0",
+    cardBorder: "#233554"
+  };
+
   return (
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={`${inter.className} bg-gray-50 text-gray-900`}>
-        <div className="min-h-screen">
-          {/* Navigation Bar */}
-          <nav className="bg-white shadow-md sticky top-0 z-50">
-            <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-              <h1 className="text-xl font-bold text-blue-600">Software Engineer</h1>
-              <div className="flex gap-6">
-                <a href="#about" className="hover:text-blue-600 transition">About</a>
-                <a href="#skills" className="hover:text-blue-600 transition">Skills</a>
-                <a href="#experience" className="hover:text-blue-600 transition">Experience</a>
-                <a href="#education" className="hover:text-blue-600 transition">Education</a>
-                <a href="#contact" className="hover:text-blue-600 transition">Contact</a>
-              </div>
+      <body 
+        className={`${inter.className}`}
+        style={{ 
+          backgroundColor: colorPalette.primary,
+          color: colorPalette.textPrimary 
+        }}
+      >
+        {/* Optional: Add a simple fixed navigation if needed */}
+        <nav 
+          className="sticky top-0 z-50 py-3 px-4 border-b"
+          style={{ 
+            backgroundColor: colorPalette.primary,
+            borderColor: colorPalette.cardBorder
+          }}
+        >
+          <div className="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 className="text-xl font-bold" style={{ color: colorPalette.accent }}>
+              Software Engineer
+            </h1>
+            <div className="flex gap-6">
+              <a 
+                href="#about" 
+                className="hover:text-accent transition-colors duration-300"
+                style={{ color: colorPalette.textSecondary }}
+              >
+                Ateneo De Davao University
+              </a>
             </div>
-          </nav>
-          
-          <main className="container mx-auto px-4 py-8">
-            {children}
-          </main>
-          
-          {/* Footer */}
-          <footer className="bg-gray-800 text-white py-6 mt-12">
-            <div className="container mx-auto px-4 text-center">
-              <p>© {new Date().getFullYear()} Software Engineer Resume</p>
-              <p className="text-gray-400 mt-2">Last updated: {new Date().toLocaleDateString()}</p>
-            </div>
-          </footer>
-        </div>
+          </div>
+        </nav> 
+        
+        <main>
+          {children}
+        </main>
+        
+        {/* Optional: Add a simple footer if needed */}
+         <footer 
+          className="py-6 mt-12 border-t"
+          style={{ 
+            backgroundColor: colorPalette.primary,
+            borderColor: colorPalette.cardBorder
+          }}
+        >
+          <div className="max-w-7xl mx-auto px-4 text-center">
+            <p className="text-sm" style={{ color: colorPalette.textSecondary }}>
+              © {new Date().getFullYear()} Yani Isaac U. Santos. All rights reserved.
+            </p>
+            <p className="text-xs mt-2" style={{ color: colorPalette.textSecondary + '80' }}>
+              Last updated: {new Date().toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+              })}
+            </p>
+          </div>
+        </footer> 
       </body>
     </html>
   );

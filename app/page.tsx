@@ -23,7 +23,8 @@ export default function Home() {
       className="min-h-screen transition-colors duration-500"
       style={{ 
         backgroundColor: colorPalette.primary,
-        fontFamily: "'Inter', 'Segoe UI', sans-serif" 
+        fontFamily: "'Inter', 'Segoe UI', sans-serif",
+        color: colorPalette.textPrimary
       }}
     >
       {/* Animated Background Elements */}
@@ -36,7 +37,8 @@ export default function Home() {
 
       <div className="relative max-w-7xl mx-auto px-4 py-8">
         {/* Header Section */}
-        <header className="mb-12 py-8">
+        <header className="mb-12 py-8"
+          style={{ backgroundColor: colorPalette.primary }}>
           <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
             {/* Profile Picture with Glow Effect */}
             <div className="relative group">
@@ -57,7 +59,7 @@ export default function Home() {
                   src="/profile.jpg" 
                   alt="Yani Isaac U. Santos"
                   fill
-                  className="transition-opacity duration-500"
+                  className="transition-opacity duration-500 object-cover"
                 />
               </div>
             </div>
@@ -141,9 +143,9 @@ export default function Home() {
         </header>
 
         {/* Navigation Tabs */}
-        <nav className="mb-8">
+        <nav className="mb-8" style={{ backgroundColor: colorPalette.primary }}>
           <div className="flex flex-wrap gap-2 justify-center">
-            {["About", "Education", "Projects", "Skills", "Experience", "Contact"].map((tab) => (
+            {["About", "Education", "Projects"].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab.toLowerCase())}
@@ -186,7 +188,11 @@ export default function Home() {
             
             {/* About Section */}
             {activeTab === "about" && (
-              <section className="card-gradient p-8 rounded-2xl shadow-2xl">
+              <section className="p-8 rounded-2xl shadow-2xl"
+                style={{ 
+                  backgroundColor: colorPalette.secondary,
+                  border: `1px solid ${colorPalette.cardBorder}`
+                }}>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-lg flex items-center justify-center"
                     style={{ backgroundColor: colorPalette.accent + '20' }}>
@@ -217,7 +223,7 @@ export default function Home() {
                         key={index}
                         className="p-4 rounded-xl border text-center group hover:scale-105 transition-all duration-300"
                         style={{ 
-                          backgroundColor: colorPalette.secondary,
+                          backgroundColor: colorPalette.primary,
                           borderColor: colorPalette.cardBorder
                         }}
                       >
@@ -248,7 +254,7 @@ export default function Home() {
                           key={index}
                           className="p-4 rounded-xl border group hover:border-accent transition-all duration-300 cursor-pointer"
                           style={{ 
-                            backgroundColor: colorPalette.secondary,
+                            backgroundColor: colorPalette.primary,
                             borderColor: colorPalette.cardBorder
                           }}
                         >
@@ -273,7 +279,11 @@ export default function Home() {
 
             {/* Education Section */}
             {activeTab === "education" && (
-              <section className="card-gradient p-8 rounded-2xl shadow-2xl">
+              <section className="p-8 rounded-2xl shadow-2xl"
+                style={{ 
+                  backgroundColor: colorPalette.secondary,
+                  border: `1px solid ${colorPalette.cardBorder}`
+                }}>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-lg flex items-center justify-center"
                     style={{ backgroundColor: colorPalette.accent + '20' }}>
@@ -328,7 +338,7 @@ export default function Home() {
                       {/* Content */}
                       <div className="flex-1 p-4 rounded-xl border group-hover:border-accent transition-all duration-300"
                         style={{ 
-                          backgroundColor: colorPalette.secondary,
+                          backgroundColor: colorPalette.primary,
                           borderColor: colorPalette.cardBorder
                         }}
                       >
@@ -339,7 +349,7 @@ export default function Home() {
                           </h3>
                           <span className="text-sm px-3 py-1 rounded-full border"
                             style={{ 
-                              backgroundColor: colorPalette.primary,
+                              backgroundColor: colorPalette.secondary,
                               borderColor: colorPalette.cardBorder,
                               color: colorPalette.textSecondary
                             }}>
@@ -363,7 +373,11 @@ export default function Home() {
 
             {/* Projects Section */}
             {activeTab === "projects" && (
-              <section className="card-gradient p-8 rounded-2xl shadow-2xl">
+              <section className="p-8 rounded-2xl shadow-2xl"
+                style={{ 
+                  backgroundColor: colorPalette.secondary,
+                  border: `1px solid ${colorPalette.cardBorder}`
+                }}>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-lg flex items-center justify-center"
                     style={{ backgroundColor: colorPalette.accent + '20' }}>
@@ -411,7 +425,7 @@ export default function Home() {
                     >
                       <div className="h-full p-6 rounded-xl border hover:border-accent transition-all duration-300 hover:scale-[1.02]"
                         style={{ 
-                          backgroundColor: colorPalette.secondary,
+                          backgroundColor: colorPalette.primary,
                           borderColor: colorPalette.cardBorder
                         }}
                       >
@@ -439,7 +453,7 @@ export default function Home() {
                               key={tagIndex}
                               className="text-xs px-3 py-1 rounded-full border group-hover:border-accent transition-colors duration-300"
                               style={{ 
-                                backgroundColor: colorPalette.primary,
+                                backgroundColor: colorPalette.secondary,
                                 borderColor: colorPalette.cardBorder,
                                 color: colorPalette.textSecondary
                               }}
@@ -469,7 +483,11 @@ export default function Home() {
           {/* Right Column - Sidebar */}
           <div className="space-y-8">
             {/* Skills Section */}
-            <section className="card-gradient p-6 rounded-2xl shadow-2xl">
+            <section className="p-6 rounded-2xl shadow-2xl"
+              style={{ 
+                backgroundColor: colorPalette.secondary,
+                border: `1px solid ${colorPalette.cardBorder}`
+              }}>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center"
                   style={{ backgroundColor: colorPalette.accent + '20' }}>
@@ -532,7 +550,11 @@ export default function Home() {
             </section>
 
             {/* Contact & Info */}
-            <section className="card-gradient p-6 rounded-2xl shadow-2xl">
+            <section className="p-6 rounded-2xl shadow-2xl"
+              style={{ 
+                backgroundColor: colorPalette.secondary,
+                border: `1px solid ${colorPalette.cardBorder}`
+              }}>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center"
                   style={{ backgroundColor: colorPalette.accent + '20' }}>
@@ -554,7 +576,7 @@ export default function Home() {
                     key={index}
                     className="flex items-center gap-3 p-3 rounded-lg border hover:border-accent transition-all duration-300 group"
                     style={{ 
-                      backgroundColor: colorPalette.secondary,
+                      backgroundColor: colorPalette.primary,
                       borderColor: colorPalette.cardBorder
                     }}
                   >
@@ -600,7 +622,7 @@ export default function Home() {
                       href="#"
                       className="flex-1 p-3 rounded-lg border text-center hover:scale-105 transition-all duration-300 group"
                       style={{ 
-                        backgroundColor: colorPalette.secondary,
+                        backgroundColor: colorPalette.primary,
                         borderColor: colorPalette.cardBorder
                       }}
                     >
@@ -618,7 +640,11 @@ export default function Home() {
             </section>
 
             {/* Currently Learning */}
-            <section className="card-gradient p-6 rounded-2xl shadow-2xl">
+            <section className="p-6 rounded-2xl shadow-2xl"
+              style={{ 
+                backgroundColor: colorPalette.secondary,
+                border: `1px solid ${colorPalette.cardBorder}`
+              }}>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center"
                   style={{ backgroundColor: colorPalette.accent + '20' }}>
@@ -659,7 +685,10 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="mt-12 pt-8 border-t text-center"
-          style={{ borderColor: colorPalette.cardBorder }}>
+          style={{ 
+            borderColor: colorPalette.cardBorder,
+            backgroundColor: colorPalette.primary
+          }}>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm" style={{ color: colorPalette.textSecondary }}>
               © {new Date().getFullYear()} Yani Isaac U. Santos. All rights reserved.
@@ -693,11 +722,6 @@ export default function Home() {
 
       {/* Custom Styles */}
       <style jsx global>{`
-        .card-gradient {
-          background: linear-gradient(135deg, ${colorPalette.secondary}, ${colorPalette.primary});
-          border: 1px solid ${colorPalette.cardBorder};
-        }
-        
         .text-gradient {
           background: linear-gradient(135deg, ${colorPalette.accent}, ${colorPalette.highlight});
           -webkit-background-clip: text;
@@ -714,6 +738,22 @@ export default function Home() {
         .animate-gradient {
           background-size: 200% 200%;
           animation: gradient 3s ease infinite;
+        }
+        
+        /* Ensure all backgrounds are dark */
+        body {
+          background-color: ${colorPalette.primary};
+          color: ${colorPalette.textPrimary};
+        }
+        
+        /* Remove any default white backgrounds */
+        * {
+          box-sizing: border-box;
+        }
+        
+        /* Fix for any potential white flash on load */
+        html {
+          background-color: ${colorPalette.primary};
         }
       `}</style>
     </div>
